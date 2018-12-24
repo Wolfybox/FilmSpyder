@@ -1,3 +1,3 @@
 # FilmSpyder
-This is a course project for the Software Engineering Course 2018 of HITSZ
-Team members: YangZehua LuoPengchu LiJiahui XuanYaoming
+HITSZ 2018 软件工程项目 仅供学习和交流
+提供实时电影资讯，帮助您的分析电影数据，您的电影小助手
