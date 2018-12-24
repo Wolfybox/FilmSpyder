@@ -20,7 +20,19 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class test {
 	public static void main(String[] args) throws Exception {
-		
+		SessionFactory sf=new Configuration().configure().buildSessionFactory();
+		Session session=sf.openSession();
+		Query query=session.createQuery("from Movie m where m.moviename=?");
+		query.setParameter(0, "命运速递");
+		Movie m=(Movie) query.uniqueResult();
+		System.out.println(m.getClass_()+"\t"+m.getMoviename());
+		Set<ActorList> c=m.getActorLists();
+		Iterator<ActorList> it=c.iterator();
+		ActorList t;
+		while(it.hasNext()) {
+			t=it.next();
+			System.out.println(t.getActor().getActorname());
+		}
 		// recommender configuration
 //	    Configuration conf = new Configuration();
 //	    conf.set("dfs.data.dir","/Users/lijiahui/Downloads/librec-librec-src-v2.0/data");

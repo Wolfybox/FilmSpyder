@@ -28,6 +28,7 @@ import com.aliyuncs.exceptions.ClientException;
 
 import AssistClass.Sms;
 import Bean.ActorStatistic;
+import Bean.OnAirMovie;
 import DataManager.Actor;
 import DataManager.ActorCollect;
 import DataManager.ActorList;
@@ -1206,28 +1207,35 @@ public class ServicesController {
 	@RequestMapping(value="onair.do",method=RequestMethod.POST)
 	@ResponseBody
 	public List<moviesimple> OnAir() {
-		Session session=null;
-		try {
-			session=sf.openSession();
-			SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
-			String year=df.format(new Date()).split("-")[0];
-			String month=df.format(new Date()).split("-")[1];
-			Query query=session.createQuery("from Movie m where m.year=? and m.month=? ");
-			query.setParameter(0, year);
-			query.setParameter(1, month);
-			List<Movie> list=query.list();
-			Iterator<Movie> it=list.iterator();
-			List<moviesimple> respone=new ArrayList<>();
-			while(it.hasNext()) {
-				respone.add(pack(it.next()));
-			}
-			return respone;
-		}catch(Exception e) {
-			System.out.println(e);
-			return null;
-		}finally {
-			session.close();
+//		Session session=null;
+//		try {
+//			session=sf.openSession();
+//			SimpleDateFormat df=new SimpleDateFormat("yyyy-MM-dd");
+//			String year=df.format(new Date()).split("-")[0];
+//			String month=df.format(new Date()).split("-")[1];
+//			Query query=session.createQuery("from Movie m where m.year=? and m.month=? ");
+//			query.setParameter(0, year);
+//			query.setParameter(1, month);
+//			List<Movie> list=query.list();
+//			Iterator<Movie> it=list.iterator();
+//			List<moviesimple> respone=new ArrayList<>();
+//			while(it.hasNext()) {
+//				respone.add(pack(it.next()));
+//			}
+//			return respone;
+//		}catch(Exception e) {
+//			System.out.println(e);
+//			return null;
+//		}finally {
+//			session.close();
+//		}
+		OnAirMovie movie=(OnAirMovie) GlobalBean.getApplicationContext().getBean("OnAirMovie");
+		Iterator<Movie> it=movie.getMovies().iterator();
+		List<moviesimple> respone=new ArrayList<>();
+		while(it.hasNext()) {
+			respone.add(pack(it.next()));
 		}
+		return respone;
 	}
 	//推荐
 	@RequestMapping(value="recommend.do",method=RequestMethod.POST)
