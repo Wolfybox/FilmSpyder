@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">LJH787807080886</property>
+        <property name="hibernate.connection.url">jdbc:mysql://193.112.48.152:3306/MoviesDatabase</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+      	<property name="hibernate.c3p0.max_size">2000</property>
+     	<property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.timeout">60</property>
+      	<property name="hibernate.c3p0.max_statements">100</property>
+	    <property name="hibernate.c3p0.idle_test_period">10</property>
+		<property name="hibernate.c3p0.acquire_increment">20</property>
+		<property name="c3p0.idleConnectionTestPeriod">20</property>
+		<property name="c3p0.maxIdleTime">5</property>
+        <property name="connection.release_mode">after_statement</property>
+  		<mapping resource="DataManager/User.hbm.xml"/>
+  		<mapping resource="DataManager/Movie.hbm.xml"/>
+  		<mapping resource="DataManager/Actor.hbm.xml"/>
+  		<mapping resource="DataManager/Rating.hbm.xml"/>
+  		<mapping resource="DataManager/Collect.hbm.xml"/>
+  		<mapping resource="DataManager/MovieClass.hbm.xml"/>
+  		<mapping resource="DataManager/ActorList.hbm.xml"/>
+  		<mapping resource="DataManager/ActorCollect.hbm.xml"/>
+  		<mapping resource="DataManager/TempMovie.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

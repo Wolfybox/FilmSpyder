@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2018-12-18 10:02:08 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="MoviesDatabase" dynamic-insert="false" dynamic-update="false" mutable="true" name="DataManager.User" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="User">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="phone" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="phone" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="username" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="actorCollects" optimistic-lock="true" sort="unsorted" table="ActorCollect">
+            <key on-delete="noaction">
+                <column name="userid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.ActorCollect" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="ratings" optimistic-lock="true" sort="unsorted" table="Rating">
+            <key on-delete="noaction">
+                <column name="userid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.Rating" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

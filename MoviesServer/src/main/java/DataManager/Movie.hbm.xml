@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2018-12-18 10:02:08 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="MoviesDatabase" dynamic-insert="false" dynamic-update="false" mutable="true" name="DataManager.Movie" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Movie">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="moviename" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="moviename" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="director" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="director"/>
+        </property>
+        <property generated="never" lazy="false" name="boxOffice" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="box_office"/>
+        </property>
+        <property generated="never" lazy="false" name="class_" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="class"/>
+        </property>
+        <property generated="never" lazy="false" name="year" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="year"/>
+        </property>
+        <property generated="never" lazy="false" name="month" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="month"/>
+        </property>
+        <property generated="never" lazy="false" name="day" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="day"/>
+        </property>
+        <property generated="never" lazy="false" name="introduce" optimistic-lock="true" type="string" unique="false">
+            <column length="1000" name="introduce"/>
+        </property>
+        <property generated="never" lazy="false" name="thumburl" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="thumburl"/>
+        </property>
+        <property generated="never" lazy="false" name="actor" optimistic-lock="true" type="string" unique="false">
+            <column length="500" name="actor"/>
+        </property>
+        <property generated="never" lazy="false" name="rate" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="rate"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="actorLists" optimistic-lock="true" sort="unsorted" table="ActorList">
+            <key on-delete="noaction">
+                <column name="movieid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.ActorList" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="ratings" optimistic-lock="true" sort="unsorted" table="Rating">
+            <key on-delete="noaction">
+                <column name="movieid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.Rating" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="movieClasses" optimistic-lock="true" sort="unsorted" table="MovieClass">
+            <key on-delete="noaction">
+                <column name="movieid"/>
+            </key>
+            <one-to-many class="DataManager.MovieClass" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
