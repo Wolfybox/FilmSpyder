@@ -1,0 +1,272 @@
+.coverContainer {
+  position: absolute;
+  width: inherit;
+  height: 550rpx;
+}
+ 
+.cover {
+  width: inherit;
+  height: inherit;
+}
+
+/* ---------电影信息----------------- */
+
+.infoContainer {
+  position: absolute;
+  width: inherit;
+  border-radius: 40rpx;
+  background-color: white;
+  margin-top: 510rpx;
+}
+
+/* 基本信息容器 */
+
+.basicInfoContainer {
+  width: inherit;
+  height: 230rpx;
+  display: flex;
+  flex-direction: row;
+  /* background: green; */
+}
+
+/* 电影名时间等信息容器 */
+
+.abstractContainer {
+  width: 70%;
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 45rpx;
+  /* font-weight: bold; */
+  margin-left: 20rpx;
+}
+
+.english {
+  font-size: 30rpx;
+  margin-left: 20rpx;
+  color: #9b9b9b;
+  font-weight: 550;
+  margin-top: 20rpx;
+}
+
+.others {
+  font-size: 30rpx;
+  color: #9b9b9b;
+  margin-left: 20rpx;
+  margin-top: 50rpx;
+}
+
+/* 评分容器 */
+
+.scoreContainer {
+  width: 30%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 评分灰色容器 */
+
+.scoreWrapper {
+  border-radius: 20rpx;
+  background: #ebebeb;
+  width: 90%;
+  height: 80%;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 评分 */
+
+.score {
+  font-size: 45rpx;
+  font-weight: lighter;
+  display: table;
+  margin: 0 auto;
+  margin-top: 10rpx;
+}
+
+/* 来自猫眼评分 */
+
+.hint {
+  font-size: 30rpx;
+  color: #9b9b9b;
+  display: table;
+  margin: 0 auto;
+  margin-top: 60rpx;
+}
+
+/* --------按钮容器-------------- */
+
+.buttonContainer {
+  margin-top: 20rpx;
+  width: inherit;
+  /* height: 200rpx; *//* background: pink; */
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+
+.statsContainer {
+  width: 25%;
+}
+
+.shareContainer {
+  width: 25%;
+}
+
+.buttonContainer image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.buttonContainer text {
+  font-size: 30rpx;
+  color: #0050b3;
+}
+
+.buttonContainer button {
+  border-radius: 20rpx;
+  border-color: #096dd9;
+  border-width: 0.5rpx;
+  border-style: solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+}
+
+/* 分割线 */
+
+.divider {
+  width: inherit;
+  height: 1rpx;
+  background-color: black;
+  opacity: 0.28;
+  margin-top: 40rpx;
+}
+
+/* 详情容器 */
+
+.detailContainer view {
+  width: inherit;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: column;
+  margin-left: 35rpx;
+  margin-right: 35rpx;
+  margin-top: 60rpx;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 35rpx;
+}
+
+.content {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  color: #9b9b9b;
+  font-weight: lighter;
+}
+
+/* --------------列表------------------------- */
+
+.scrollView {
+  padding: 20rpx;
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+  margin-top: 30rpx;
+}
+
+/* item容器 */
+
+.itemBox {
+  /* width: 100rpx; */
+  display: inline-block;
+}
+
+/* 封面 */
+
+.thumb {
+  height: 380rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  width: 250rpx;
+}
+
+/* 电影信息 */
+
+.itemInfo {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 演员名 */
+
+.actorName {
+  font-size: 20rpx;
+  font-weight: bold;
+}
+
+.actorImage {
+  height: 270rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  width: 260rpx;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.header {
+  margin-left: 30rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+}
+
+.actorContainer {
+  margin-top: 60rpx;
+}
+
+/* 已收藏按钮 */
+
+.collectedContainer {
+  width: 28%;
+}
+
+.collectedContainer image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.collectedContainer text {
+  font-size: 30rpx;
+  color: #bfbfbf;
+}
+
+.collectedContainer button {
+  border-radius: 20rpx;
+  border-color: #bfbfbf;
+  border-width: 0.5rpx;
+  border-style: solid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: white;
+}

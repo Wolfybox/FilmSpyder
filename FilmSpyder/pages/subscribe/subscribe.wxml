@@ -1,0 +1,17 @@
+<scroll-view class='actorList' scroll-y style='width: 100% height:100%'>
+  <block wx:for="{{myActor}}" wx:key="unique">
+    <view class='itemBox' bindtap='onSubscribeClick' data-name='{{item.actorname}}'>
+      <view class='avatarContainer'>
+        <image class='avatar' src='{{item.imageurl}}' mode='aspectFill'> </image>
+      </view>
+      <view class='itemInfo'>
+        <text class='name'>{{item.actorname}}</text>
+        <text class='feature'>{{item.feature}}</text>
+        <text class='recent'>{{item.recent}}</text>
+      </view>
+      <view class='buttonContainer'>
+        <view class='detailButton'>详情</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

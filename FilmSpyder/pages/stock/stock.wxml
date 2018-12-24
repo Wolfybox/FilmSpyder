@@ -1,0 +1,38 @@
+<view class='topBarContainer'>
+  <!-- <view>{{year}}年{{season}}季度{{month}}月</view> -->
+  <picker-view indicator-style="height: 50px;" style="width: 80%; height: 100px; margin-left:50rpx;" value="{{value}}" bindchange="bindChange">
+
+    <picker-view-column>
+      <view wx:for="{{years}}" style="line-height: 50px" wx:key='unique'>{{item}}年</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{seasons}}" style="line-height: 50px" wx:key='unique'>{{item}}季度</view>
+    </picker-view-column>
+
+    <picker-view-column>
+      <view wx:for="{{months}}" style="line-height: 50px" wx:key='unique'>{{item}}月</view>
+    </picker-view-column>
+
+  </picker-view>
+
+  <view class='buttonContainer'>
+    <view class='generate' bindtap='onGenTap'>生成</view>
+  </view>
+</view>
+
+<view class='divider'></view>
+
+<view class='pieContainer' bindlongpress='longPressPie'>
+  <view class='titleContainer'>
+    <text wx:if='{{chartShown}}'>{{yearText}}年{{seasonText}}季度各类型电影票房份额</text>
+  </view>
+  <canvas class='pie' canvas-id='pieCanvas'></canvas>
+</view>
+
+<view class='ringContainer' bindlongpress='longPressRing'>
+  <view class='titleContainer'>
+    <text wx:if='{{chartShown}}'>{{yearText}}年{{monthText}}月份各类型电影票房份额</text>
+  </view>
+  <canvas class='ring' canvas-id='ringCanvas'></canvas>
+</view>

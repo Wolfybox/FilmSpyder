@@ -1,0 +1,64 @@
+.itemBox {
+  width: inherit;
+  height: 270rpx;
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 图片容器 */
+
+.thumbContainer {
+  position: relative;
+  width: 35%;
+  height: inherit;
+  /* background: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 遮罩 */
+
+.shadow {
+  background-color: #0050b3;
+  opacity: 0.6;
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 10rpx;
+}
+
+/* 封面 */
+
+.thumb {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 10rpx;
+}
+
+/* 标题 */
+
+.title {
+  position: absolute;
+  font-size: 35rpx;
+  color: white;
+  font-weight: lighter;
+}
+
+/* 电影列表 */
+
+.films {
+  height: 70%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* margin-top: 20rpx; *//* align-items: center; */
+}
+
+.films text {
+  font-size: 30rpx;
+}

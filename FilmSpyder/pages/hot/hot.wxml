@@ -1,0 +1,26 @@
+<!-- <radio-group class="radioTabMenu" bindchange="onTabChange">
+  <label wx:for="{{tabMenu}}" wx:key="unique">
+    <radio value="{{item.value}}" checked="{{item.checked}}" hidden='true' />
+    <text class="{{item.checked == true? 'highlight' : 'normal' }}">{{item.name}}</text>
+  </label>
+</radio-group> -->
+
+<view class='divider'></view>
+
+<scroll-view class='filmList' scroll-y style='width: 100% height:100%'>
+  <block wx:for="{{hotFilm}}" wx:key="unique">
+    <view class='itemBox' bindtap='onHotFilmClick' id='{{item.id}}'>
+      <view class='thumbContainer'>
+        <image class='thumb' src='{{item.thumburl}}' mode='aspectFill'> </image>
+      </view>
+      <view class='itemInfo'>
+        <text class='name'>{{item.moviename}}</text>
+        <text class='score'>{{item.rate}}</text>
+        <text class='others'>{{item.time}} {{item.class_}} {{item.director}}</text>
+      </view>
+      <view class='buttonContainer'>
+        <view class='detailButton'>详情</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>

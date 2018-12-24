@@ -1,0 +1,58 @@
+/* .infoContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  height: 400px;
+}
+
+.avatar {
+  width: 30%;
+  height: 30%;
+  margin-top: 80px;
+  border-radius: 30rpx;
+}
+
+.nickname {
+  margin-top: 30px;
+} */
+
+.headerContainer {
+  width: inherit;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background{
+  position: absolute;
+  opacity: 0.3
+}
+
+.logo {
+  width: 35%;
+  height: 30%;
+  margin-top: 80px;
+}
+
+.welcome {
+  margin-top: 30rpx;
+}
+
+.hint {
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: grey;
+}
+
+.server {
+  margin-top: 30rpx;
+}
+
+.button {
+  width: 70%;
+  background-color: green;
+  color: white;
+}

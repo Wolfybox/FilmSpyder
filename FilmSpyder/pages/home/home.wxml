@@ -1,0 +1,68 @@
+<view class='titleContainer'>
+  <view class='searchContainer'>
+    <image class='switchMode' src='https://filmspyder.cn/Image/switch_search_mode.png' bindtap='switchMode'></image>
+    <view class='search'>
+      <input type='text' placeholder='{{hint}}' confirm-type='search' value='{{inputValue}}' bindinput='inputBind' bindconfirm='query'></input>
+      <image class='searchIcon' src='https://filmspyder.cn/Image/images/search.png' bindtap='query'></image>
+    </view>
+  </view>
+</view>
+
+<view class='swiperContainer'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+    <block wx:for="{{recommend}}" wx:key="unique">
+      <swiper-item bindtap='onRecommendTap' id='{{item.id}}' class='swiperItem'>
+        <image src="{{item.thumburl}}" mode="aspectFit" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class='buttonContainer'>
+  <view class='buttonCircle1'>
+    <image class='hot' src='https://filmspyder.cn/Image/images/hot.png' bindtap='onHotClick'></image>
+  </view>
+
+  <view class='buttonCircle2'>
+    <image class='rank' src='https://filmspyder.cn/Image/images/rank.png' bindtap='onRankClick'></image>
+  </view>
+
+  <view class='buttonCircle3'>
+    <image class='subscribe' src='https://filmspyder.cn/Image/images/subscribe.png' bindtap='onSubscribeClick'></image>
+  </view>
+
+  <view class='buttonCircle4'>
+    <image class='collection' src='https://filmspyder.cn/Image/images/collection.png' bindtap='onCollectClick'></image>
+  </view>
+</view>
+
+<!-- 按钮标签 -->
+<view class='tagContainer'>
+  <text class='tagHot'>热门</text>
+  <view class='tagRank'>排行</view>
+  <view class='tagSub'>关注</view>
+  <view class='tagCollect'>收藏</view>
+</view>
+
+<!-- 分割线 -->
+<view class='divider'></view>
+
+<!-- 热映部分的标题 -->
+<view class='onAirTextContainer'>
+  <text class='textOnAir'>正在热映</text>
+  <text class='more'>更多</text>
+</view>
+
+<view class='onAirListContainer'>
+  <scroll-view class='scrollView' scroll-x style='width: 100%'>
+    <block wx:for="{{onAir}}" wx:key="unique">
+      <view class='itemBox' bindtap='onAirClick' id='{{item.id}}'>
+        <image class='thumb' src='{{item.thumburl}}' mode='aspectFill'> </image>
+        <view class='itemInfo'>
+          <text class='name'>{{item.moviename}}</text>
+          <text class='score'>{{item.rate}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

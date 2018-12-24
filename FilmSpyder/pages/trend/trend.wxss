@@ -1,0 +1,55 @@
+.topBarContainer {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buttonContainer {
+  width: 20%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.generate {
+  width: 80rpx;
+  background-color: white;
+  border-color: #096dd9;
+  color: #096dd9;
+  font-size: 25rpx;
+  border-width: 0.5rpx;
+  border-style: solid;
+  padding: 10rpx;
+  border-radius: 15rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  width: inherit;
+  height: 1rpx;
+  background-color: #9fd6d3;
+  margin-top: 40rpx;
+  opacity: 0.3;
+}
+
+.canvasContainer {
+  width: 100%;
+  margin-top: 6%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  height: 400px;
+  width: 100%;
+}
