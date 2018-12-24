@@ -1,0 +1,26 @@
+<view class='cardContainer' style='height:{{windowHeight}}px; width="{{windowWidth}}px"'>
+
+  <view class='stock' bindtap='toStock'>
+    <text class='text'>票房份额</text>
+    <image class='cover' src='' mode='scaleToFill'></image>
+    <view class='shadow'></view>
+  </view> 
+  <view class='trend' bindtap='toTrend'>
+    <text class='text'>变化趋势</text>
+    <image class='cover' src='{{trend}}' mode='aspectFill'></image>
+    <view class='shadow'></view>
+  </view>
+
+  <view class='top' bindtap='toTop'>
+    <text class='text'>电影最TOP</text>
+    <image class='cover' src='{{top}}' mode='aspectFill'></image>
+    <view class='shadow'></view>
+  </view>
+
+  <view class='actor' bindtap='toActor'>
+    <text class='text'>劳模演员</text>
+    <image class='cover' src='{{actor}}' mode='aspectFill'></image>
+    <view class='shadow'></view>
+  </view>
+
+</view>

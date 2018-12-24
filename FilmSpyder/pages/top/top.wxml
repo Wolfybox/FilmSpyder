@@ -1,0 +1,26 @@
+<view class='topBarContainer'>
+  <picker-view indicator-style="height: 50px;" style="width: 40%; height: 100px; margin-left:50rpx;" value="{{value}}" bindchange="bindYearChange">
+    <picker-view-column>
+      <view wx:for="{{years}}" style="line-height: 50px" wx:key='unique'>{{item}}年</view>
+    </picker-view-column>
+  </picker-view>
+
+  <text>TOP</text>
+
+  <picker-view indicator-style="height: 50px;" style="width: 40%; height: 100px; margin-left:50rpx;" value="{{value}}" bindchange="bindTopChange">
+    <picker-view-column>
+      <view wx:for="{{tops}}" style="line-height: 50px" wx:key='unique'>{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+
+  <view class='buttonContainer'>
+    <view class='detailButton' bindtap='onGenTap'>生成</view>
+  </view>
+</view>
+
+<view class='divider'></view>
+
+<!-- 下方是数据部分 -->
+<view class='canvasContainer' bindlongpress='longTapDiagrams'>
+  <canvas class='column' canvas-id='columnCanvas'></canvas>
+</view>

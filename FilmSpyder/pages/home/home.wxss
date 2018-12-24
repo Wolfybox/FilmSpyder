@@ -1,0 +1,275 @@
+.titleContainer {
+  background-color: #096dd9;
+  height: 400rpx;
+  width: inherit;
+}
+
+.searchContainer {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around */
+}
+
+.search {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  height: 60rpx;
+  background-color: whitesmoke;
+  margin-top: 20rpx;
+  border: 1rpx solid whitesmoke;
+  border-radius: 5rpx;
+  margin-left: 20rpx;
+}
+
+/* 模式切换按钮 */
+
+.switchMode {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+  margin-left: 60rpx;
+  margin-top: 10rpx;
+}
+
+/* 搜索框提示文字样式 */
+
+.search input {
+  font-size: 27rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 30rpx;
+}
+
+/* 搜索框小图标 */
+
+.search image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
+}
+
+.swiper {
+  position: absolute;
+  top: 100rpx;
+  width: 100%;
+  height: 330rpx;
+  border-radius: 10px;
+  display: flex;
+}
+
+.swiperItem {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* 四个按钮的容器 */
+
+.buttonContainer {
+  top: 430rpx;
+  height: 113rpx;
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  padding-top: 5%;
+  margin: 10rpx;
+  margin-bottom: 10rpx;
+  justify-content: space-around;
+}
+
+.buttonCircle1 {
+  height: 100%;
+  background-color: #096dd9;
+  width: 15%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCircle2 {
+  height: 100%;
+  background-color: #096dd9;
+  width: 15%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCircle3 {
+  height: 100%;
+  background-color: #096dd9;
+  width: 15%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonCircle4 {
+  height: 100%;
+  background-color: #096dd9;
+  width: 15%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+/* 热门电影 */
+
+.hot {
+  position: relative;
+  width: 60%;
+  height: 50%;
+  align-self: center;
+}
+
+/* 电影排行 */
+
+.rank {
+  position: relative;
+  width: 65%;
+  height: 55%;
+  align-self: center;
+}
+
+/* 关注演员 */
+
+.subscribe {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  align-self: center;
+}
+
+/* 电影收藏 */
+
+.collection {
+  position: relative;
+  width: 50%;
+  height: 40%;
+  align-self: center;
+}
+
+/* 按钮标签 */
+
+.tagContainer {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.tagHot {
+  font-size: 35rpx;
+}
+
+.tagRank {
+  font-size: 35rpx;
+}
+
+.tagSub {
+  font-size: 35rpx;
+}
+
+.tagCollect {
+  font-size: 35rpx;
+}
+
+.divider {
+  width: inherit;
+  height: 1rpx;
+  background-color: #fff0f0f2;
+  margin-top: 20rpx;
+}
+
+/* 正在热映 */
+
+.onAirTextContainer {
+  display: flex;
+  height: inherit;
+  width: inherit;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.textOnAir {
+  position: absolute;
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-left: 40rpx;
+}
+
+.more {
+  position: absolute;
+  margin-left: 650rpx;
+  font-size: 35rpx;
+  color: #125cb8;
+  font-weight: bold;
+}
+
+/* 热映电影列表容器 */
+
+.onAirListContainer {
+  margin-top: 100rpx;
+  width: 100%;
+}
+
+/* 热映电影列表 */
+
+.scrollView {
+  padding: 20rpx;
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+
+/* item容器 */
+
+.itemBox {
+  /* width: 100rpx; */
+  display: inline-block;
+}
+
+/* 封面 */
+
+.thumb {
+  height: 380rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  width: 250rpx;
+}
+
+/* 电影信息 */
+
+.itemInfo {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 电影名 */
+
+.name {
+  font-size: 20rpx;
+  font-weight: bold;
+}
+
+/* 电影评分 */
+
+.score {
+  font-size: 20rpx;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

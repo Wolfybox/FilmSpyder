@@ -1,0 +1,27 @@
+<view class='topBarContainer'>
+  <picker-view indicator-style="height: 50px;" style="width: 40%; height: 100px; margin-left:50rpx;" value="{{value}}" bindchange="bindChangeFrom">
+    <picker-view-column>
+      <view wx:for="{{froms}}" style="line-height: 50px" wx:key='unique'>{{item}}年</view>
+    </picker-view-column>
+  </picker-view>
+
+  <text>至</text>
+
+  <picker-view indicator-style="height: 50px;" style="width: 40%; height: 100px; margin-left:50rpx;" value="{{value}}" bindchange="bindChangeTo">
+    <picker-view-column>
+      <view wx:for="{{tos}}" style="line-height: 50px" wx:key='unique'>{{item}}年</view>
+    </picker-view-column>
+  </picker-view>
+
+
+  <view class='buttonContainer'>
+    <view class='generate' bindtap='onGenTap'>生成</view>
+  </view>
+</view>
+
+<view class='divider'></view>
+
+<view class='canvasContainer' bindlongpress='longTapDiagrams'>
+  <view class='title' wx:if="{{chartShown}}">{{fromText}}至{{toText}}历年月票房变化趋势</view>
+  <canvas class='line' canvas-id='lineCanvas'></canvas>
+</view>

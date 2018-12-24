@@ -1,0 +1,31 @@
+<view class='titleContainer'>
+  <image class='switchMode' src='https://filmspyder.cn/Image/switch_search_mode.png' bindtap='switchMode'></image>
+  <view class='search'>
+    <input type='text' placeholder='{{hint}}' confirm-type='search' value='{{initValue}}' bindinput='inputBind' bindconfirm='query'></input>
+    <image class='searchIcon' src='https://filmspyder.cn/Image/images/search.png' bindtap='query'></image>
+  </view>
+</view>
+
+<view class='divider'></view>
+
+<scroll-view class='filmList' scroll-y style='width: 100% height:100%' wx:if="{{hasResult}}">
+  <block wx:for="{{resultList}}"  wx:key="unique" wx:key='unique' >
+    <view class='itemBox' bindtap='onResultClick' id='{{item.id}}'>
+      <view class='thumbContainer'>
+        <image class='thumb' src='{{item.thumburl}}' mode='aspectFill'> </image>
+      </view>
+      <view class='itemInfo'>
+        <text class='name'>{{item.moviename}}</text>
+        <text class='score'>{{item.rate}}</text>
+        <text class='others'>{{item.time}} {{item.class_}} {{item.director}}</text>
+      </view>
+      <view class='buttonContainer'>
+        <view class='detailButton'>详情</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<view class='emptyHint' wx:else>
+  <text>Oops...什么也没搜到呢</text>
+</view>

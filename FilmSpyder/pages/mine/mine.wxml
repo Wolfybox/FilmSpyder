@@ -1,0 +1,55 @@
+<view class='divider'></view>
+
+<view class='infoContainer'>
+  <view class='textContainer'>
+    <text class='greeting'>{{greeting}}</text>
+    <text class='username'>{{userNickname}}</text>
+  </view>
+  <image class='avatar' src='{{userAvatarUrl}}' mode='aspectFill' bindtap='onTestTap'></image>
+</view>
+
+<view class='headerDivider'></view>
+<!-- 收藏 -->
+<view class='collection'>
+  <!-- 收藏头部 -->
+  <view class='header'>
+    <text class='title'>收藏</text>
+    <!-- <text class='all'>全部</text> -->
+  </view>
+  <view class='listContainer'>
+    <scroll-view class='scrollView' scroll-x style='width: 100%'>
+      <block wx:for="{{collect}}" wx:key="unique">
+        <view class='itemBox' bindtap='onCollectClick' data-name='{{item.moviename}}' id='{{item.id}}'>
+          <image class='thumb' src='{{item.thumburl}}' mode='aspectFill'> </image>
+          <view class='itemInfo'>
+            <text class='name'>{{item.moviename}}</text>
+            <text class='score'>{{item.rate}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+
+<view class='divider'></view>
+<!-- 关注 -->
+<view class='subscribe'>
+  <!-- 关注头部 -->
+  <view class='header'>
+    <text class='title'>关注</text>
+    <!-- <text class='all'>全部</text> -->
+  </view>
+
+  <view class='listContainer'>
+    <scroll-view class='scrollView' scroll-x style='width: 100%'>
+      <block wx:for="{{subscribe}}" wx:key="unique">
+        <view class='itemBox' bindtap='onSubscribeClick' data-name='{{item.actorname}}'>
+          <image class='actorImage' src='{{item.imageurl}}' mode='aspectFill'> </image>
+          <view class='itemInfo'>
+            <text class='name'>{{item.actorname}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

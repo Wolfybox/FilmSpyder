@@ -1,0 +1,146 @@
+.divider {
+  width: inherit;
+  height: 1rpx;
+  background-color: #eee;
+  margin-top: 20rpx;
+}
+
+/* 顶部信息栏 */
+
+.infoContainer {
+  width: inherit;
+  height: 250rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  background: white;
+}
+
+.avatar {
+  position: absolute;
+  width: 22%;
+  height: 70%;
+  right: 15%;
+  border-radius: 120rpx;
+}
+
+.textContainer {
+  height: inherit;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.greeting {
+  font-size: 25rpx;
+  color: #9b9b9b;
+  margin-bottom: 20rpx;
+}
+
+.username {
+  font-size: 40rpx;
+  color: #4a4a4a;
+}
+
+/* 顶部个人信息栏与收藏的分隔线 */
+
+.headerDivider {
+  width: inherit;
+  height: 30rpx;
+  background-color: #eee;
+  margin-top: 12rpx;
+}
+
+/* 头部信息 */
+
+.header {
+  width: inherit;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+/* 列表标题 */
+
+.title {
+  font-size: 30rpx;
+  position: absolute;
+  left: 5%;
+  font-weight: bold;
+}
+
+/* 全部 */
+
+.all {
+  font-size: 30rpx;
+  color: #0050b3;
+  font-weight: bold;
+  position: absolute;
+  right: 5%;
+}
+
+/* 列表 */
+
+.scrollView {
+  padding: 20rpx;
+  width: 100%;
+  display: flex;
+  white-space: nowrap;
+}
+
+/* item容器 */
+
+.itemBox {
+  /* width: 100rpx; */
+  display: inline-block;
+}
+
+/* 封面 */
+
+.thumb {
+  height: 380rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  width: 250rpx;
+}
+
+/* 电影信息 */
+
+.itemInfo {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 电影名 */
+
+.name {
+  font-size: 20rpx;
+  font-weight: bold;
+}
+
+/* 电影评分 */
+
+.score {
+  font-size: 20rpx;
+}
+
+/* 隐藏滚动条 */
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.actorImage {
+  height: 270rpx;
+  border-radius: 15rpx;
+  margin-right: 20rpx;
+  width: 260rpx;
+}

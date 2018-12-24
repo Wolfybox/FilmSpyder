@@ -1,0 +1,85 @@
+<view class='coverContainer'>
+  <image class='cover' src='{{film.thumburl}}' mode='aspectFill'></image>
+</view>
+
+<view class='infoContainer'>
+  <view class='basicInfoContainer'>
+    <view class='abstractContainer'>
+      <text class='name'>{{film.moviename}}</text>
+      <text class='english'>{{film.english}}</text>
+      <text class='others'>{{film.time}} {{film.boxOffice}}万</text>
+    </view>
+
+    <view class='scoreContainer'>
+      <view class='scoreWrapper'>
+        <text class='score'>{{film.rate}}</text>
+        <text class='hint'>综合评分</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='buttonContainer'>
+    <view class='statsContainer'>
+      <button class='btnStats' bindtap='onStatsTap'>
+        <image class='imgStats' src='https://filmspyder.cn/Image/images/stats_detail.png' mode='aspectFill'></image>
+        <text class='textStats'>数据</text>
+      </button>
+    </view>
+
+    <!-- 已收藏显示按钮 -->
+    <view class='collectedContainer' wx:if="{{collected}}">
+      <button class='btnCollected' bindtap='onCollectTap'>
+        <image class='imgStats' src='https://filmspyder.cn/Image/images/tick.png' mode='aspectFill'></image>
+        <text class='textStats'>已收藏</text>
+      </button>
+    </view>
+
+    <!-- 收藏按钮 -->
+    <view class='collectContainer' wx:else>
+      <button class='btnCollect' bindtap='onCollectTap'>
+        <image class='imgStats' src='https://filmspyder.cn/Image/images/collect.png' mode='aspectFill'></image>
+        <text class='textStats'>收藏</text>
+      </button>
+    </view>
+
+
+    <view class='shareContainer'>
+      <button class='btnShare' bindtap='onShareTap'>
+        <image class='imgStats' src='https://filmspyder.cn/Image/images/share.png' mode='aspectFill'></image>
+        <text class='textStats'>分享</text>
+      </button>
+    </view>
+  </view>
+
+  <view class='divider'></view>
+
+  <view class='detailContainer'>
+    <view class='brief'>
+      <text class='title'>影片简介</text>
+      <text class='content'>{{film.introduce}}</text>
+    </view>
+
+    <view class='directorContainer'>
+      <text class='title'>导演</text>
+      <text class='content'>{{film.director}}</text>
+    </view>
+
+
+  </view>
+
+
+  <view class='actorContainer'>
+    <text class='header'>演员表</text>
+    <scroll-view class='scrollView' scroll-x style='width: 100%'>
+      <block wx:for="{{film.actor}}" wx:key="unique">
+        <view class='itemBox' data-name='{{item.actorname}}' bindtap='onActorClick'>
+          <image class='actorImage' src='{{item.imageurl}}' mode='aspectFill'> </image>
+          <view class='itemInfo'>
+            <text class='actorName'>{{item.actorname}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 2018-12-18 10:02:08 by Hibernate Tools 5.2.10.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="MoviesDatabase" dynamic-insert="false" dynamic-update="false" mutable="true" name="DataManager.Actor" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Actor">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="actorname" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="actorname"/>
+        </property>
+        <property generated="never" lazy="false" name="year" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="year"/>
+        </property>
+        <property generated="never" lazy="false" name="month" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="month"/>
+        </property>
+        <property generated="never" lazy="false" name="day" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="day"/>
+        </property>
+        <property generated="never" lazy="false" name="imageurl" optimistic-lock="true" type="string" unique="false">
+            <column length="250" name="imageurl"/>
+        </property>
+        <property generated="never" lazy="false" name="sex" optimistic-lock="true" type="string" unique="false">
+            <column length="10" name="sex"/>
+        </property>
+        <property generated="never" lazy="false" name="maoyanid" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="maoyanid"/>
+        </property>
+        <property generated="never" lazy="false" name="count" optimistic-lock="true" type="java.lang.Integer" unique="false">
+            <column name="count"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="actorCollects" optimistic-lock="true" sort="unsorted" table="ActorCollect">
+            <key on-delete="noaction">
+                <column name="actorid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.ActorCollect" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="actorLists" optimistic-lock="true" sort="unsorted" table="ActorList">
+            <key on-delete="noaction">
+                <column name="actorid" not-null="true"/>
+            </key>
+            <one-to-many class="DataManager.ActorList" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
