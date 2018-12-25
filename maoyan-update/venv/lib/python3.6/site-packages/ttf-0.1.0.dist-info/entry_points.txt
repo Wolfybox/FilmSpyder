@@ -1,0 +1,3 @@
+[console_scripts]
+ttf = ttf.cli:cli
+
