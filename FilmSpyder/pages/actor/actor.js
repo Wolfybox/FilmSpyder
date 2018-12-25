@@ -6,7 +6,7 @@ for (let i = 2012; i <= date.getFullYear(); i++) {
   years.push(i)
 }
 
-for (let i = 3; i <= 50; i++) {
+for (let i = 3; i <= 20; i++) {
   tops.push(i)
 }
 
@@ -164,7 +164,7 @@ Page({
       }],
       yAxis: {
         format: function(val) {
-          return val + '部';
+          return val.toFixed(0) + '部';
         }
       },
       width: that.data.windowWidth,

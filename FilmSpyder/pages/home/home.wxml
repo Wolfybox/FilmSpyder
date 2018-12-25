@@ -50,7 +50,7 @@
 <!-- 热映部分的标题 -->
 <view class='onAirTextContainer'>
   <text class='textOnAir'>正在热映</text>
-  <text class='more'>更多</text>
+  <!-- <text class='more' bindtap='onMoreTap'>更多</text> -->
 </view>
 
 <view class='onAirListContainer'>

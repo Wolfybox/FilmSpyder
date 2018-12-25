@@ -31,9 +31,6 @@ Page({
         var jsonData = res.data
         console.log("返回数据:")
         console.log(jsonData)
-        // var actorList = jsonData.actor
-        // console.log("演员名单")
-        // console.log(actorList)
         that.setData({
           film: jsonData
         })
@@ -84,7 +81,7 @@ Page({
       content: '即将跳转到数据页',
       success: function(res) {
         if (res.confirm) {
-          wx.navigateTo({
+          wx.switchTab({
             url: '/pages/stats/stats',
           })
         }

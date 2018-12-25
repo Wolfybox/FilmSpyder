@@ -49,7 +49,7 @@ Page({
           topTen: jsonData
         })
       }
-    })
+    }) 
 
     wx.request({
       url: 'https://filmspyder.cn/MoviesServer/cold10.do',

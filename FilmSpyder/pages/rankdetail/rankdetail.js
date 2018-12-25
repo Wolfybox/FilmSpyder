@@ -21,7 +21,7 @@ Page({
     this.setData({
       filmList: filmList
     })
-  },
+  }, 
 
   // 电影点击事件
   onFilmClick: function(e) {
