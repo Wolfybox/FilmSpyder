@@ -28,6 +28,7 @@ import com.aliyuncs.exceptions.ClientException;
 
 import AssistClass.Sms;
 import Bean.ActorStatistic;
+import Bean.Box_Year;
 import Bean.OnAirMovie;
 import DataManager.Actor;
 import DataManager.ActorCollect;
@@ -1044,41 +1045,53 @@ public class ServicesController {
 	@RequestMapping(value="statisticsyear.do",method=RequestMethod.POST)
 	@ResponseBody
 	public JSONArray StatisticsYear(@RequestBody trend request){
-		Session session=null;
-		try {
-			int startyear=Integer.parseInt(request.getStartyear());
-			int endyear=Integer.parseInt(request.getEndyear());
-			JSONArray arry=new JSONArray();
-			JSONObject json=null;
-			session=sf.openSession();
-			Query query=null;
-			List<Movie> movielist=null;
-			for(int i=startyear;i<=endyear;i++) {
-				json=new JSONObject();
-				for(int j=1;j<=12;j++) {
-					query=session.createQuery("from Movie m where cast(m.year as integer)=? and cast(m.month as integer)=?");
-					query.setParameter(0, i);
-					query.setParameter(1, j);
-					movielist=query.list();
-					double sum=0;
-					if(movielist.size()<1) {
-						json.put(j,0);
-					}
-					Iterator<Movie> it=movielist.iterator();
-					while(it.hasNext()) {
-						sum+=Double.parseDouble(it.next().getBoxOffice());
-					}
-					json.put(j, sum);
-				}
-				arry.add(json);
-			}
-			return arry;
-		}catch(Exception e) {
-			System.out.println(e);
-			return null;
-		}finally {
-			session.close();
+		int startyear=Integer.parseInt(request.getStartyear());
+		int endyear=Integer.parseInt(request.getEndyear());
+		JSONArray arry=new JSONArray();
+		Box_Year box=(Box_Year) GlobalBean.getApplicationContext().getBean("Box_Year");
+		HashMap<Integer, JSONObject> map=box.getBox_data();
+		for(int i=startyear;i<=endyear;i++) {
+			arry.add(map.get(i));
 		}
+		if(arry.size()<1) {
+			return null;
+		}
+		return arry;
+//		Session session=null;
+//		try {
+//			int startyear=Integer.parseInt(request.getStartyear());
+//			int endyear=Integer.parseInt(request.getEndyear());
+//			JSONArray arry=new JSONArray();
+//			JSONObject json=null;
+//			session=sf.openSession();
+//			Query query=null;
+//			List<Movie> movielist=null;
+//			for(int i=startyear;i<=endyear;i++) {
+//				json=new JSONObject();
+//				for(int j=1;j<=12;j++) {
+//					query=session.createQuery("from Movie m where cast(m.year as integer)=? and cast(m.month as integer)=?");
+//					query.setParameter(0, i);
+//					query.setParameter(1, j);
+//					movielist=query.list();
+//					double sum=0;
+//					if(movielist.size()<1) {
+//						json.put(j,0);
+//					}
+//					Iterator<Movie> it=movielist.iterator();
+//					while(it.hasNext()) {
+//						sum+=Double.parseDouble(it.next().getBoxOffice());
+//					}
+//					json.put(j, sum);
+//				}
+//				arry.add(json);
+//			}
+//			return arry;
+//		}catch(Exception e) {
+//			System.out.println(e);
+//			return null;
+//		}finally {
+//			session.close();
+//		}
 	}
 	@RequestMapping(value="statisticsactorbyyear.do",method=RequestMethod.POST)
 	@ResponseBody

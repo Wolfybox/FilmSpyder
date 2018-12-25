@@ -19,6 +19,9 @@
 	<listener>
 		<listener-class>Services.OnAirUpdate</listener-class>
 	</listener>
+	<listener>
+		<listener-class>Services.BoxTime</listener-class>
+	</listener>
     <servlet-mapping>
         <servlet-name>app</servlet-name>
         <url-pattern>*.do</url-pattern>
