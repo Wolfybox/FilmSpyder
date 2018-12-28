@@ -17,8 +17,8 @@
 
 【项目依赖环境】  
 前端：微信开发者工具或其他小程序开发工具  
-后台：  
-爬虫：  
+后台：tomcat+java+Spring+Hibernate+Gradle  
+爬虫：python3+scrapy   
 
 【实现功能】  
 1.基础功能：  
