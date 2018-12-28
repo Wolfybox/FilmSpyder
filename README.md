@@ -5,7 +5,7 @@
 本项目为HITSZ 2018 软件工程项目 基于微信小程序开发 仅供学习和交流  
 
 【DEMO视频地址】  
-百度云盘：  
+百度云盘：https://pan.baidu.com/s/1XHPqGhqY6cRswSQONKI39g  
 
 【项目依赖环境】  
 前端：微信开发者工具或其他小程序开发工具  
