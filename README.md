@@ -7,12 +7,12 @@
 【DEMO视频地址】  
 百度云盘：https://pan.baidu.com/s/1XHPqGhqY6cRswSQONKI39g  
 
-【项目结构说明】
+【项目结构说明】  
 （根目录） 
 —— FilmSpyder → 前端代码  
-—— MoviesServer → 后台服务器代码
-—— maoyan-update → 爬虫代码
-—— maoyan → 爬虫代码
+—— MoviesServer → 后台服务器代码  
+—— maoyan-update → 爬虫代码  
+—— maoyan → 爬虫代码  
 
 
 【项目依赖环境】  
